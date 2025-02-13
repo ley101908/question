@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
+        }
+        .heart {
+            font-size: 100px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .heart:hover {
+            transform: scale(1.2);
+        }
+        .message {
+            display: none;
+            font-size: 24px;
+            color: red;
+            margin-top: 20px;
+        }
+        audio {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="heart" onclick="showMessage()">❤️</div>
+        <div class="message" id="valentineMessage">Will You Be My Valentine? 💕</div>
+        <audio id="valentineSong" controls>
+            <source src="https://drive.google.com/uc?export=download&id=1b5k6zVuMpSCo5Mr6dKMhKypXc52zTgQN" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('valentineMessage').style.display = 'block';
+            let audio = document.getElementById('valentineSong');
+            audio.style.display = 'block'; // Show audio player
+            audio.play(); // Play music automatically
+        }
+    </script>
+</body>
+</html>
